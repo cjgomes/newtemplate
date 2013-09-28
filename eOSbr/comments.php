@@ -39,7 +39,7 @@ if ( post_password_required() )
 		</nav><!-- #comment-nav-above -->
 		<?php endif; // check for comment navigation ?>
 
-		<ol class="comment-list">
+		<div class="comment-list">
 			<?php
 				/* Loop through and list the comments. Tell wp_list_comments()
 				 * to use eOSbr_comment() to format the comments.
@@ -49,7 +49,7 @@ if ( post_password_required() )
 				 */
 				wp_list_comments( array( 'callback' => 'eOSbr_comment' ) );
 			?>
-		</ol><!-- .comment-list -->
+		</div><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
@@ -68,6 +68,6 @@ if ( post_password_required() )
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'eOSbr' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php comment_form(array('comment_notes_after' => '')); ?>
 
 </div><!-- #comments -->

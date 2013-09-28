@@ -42,7 +42,7 @@
                         <div class="clearfix"></div>
                         <div>
                             <p>Conte&uacute;do sob a licen&ccedil;a:</p>
-                            <p>2013 - Comunidade Brasileira do elementary OS | Orgulhosamente desenvolvida com <a href="http://br.wordpress.org/">Wordpress</a></p>
+                            <a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri(). '/images/cc.png';  ?>" width="144px" height="55px"/></a>
                         </div>
                     </div>
                 </div>

@@ -92,8 +92,8 @@ function eOSbr_scripts() {
 	wp_enqueue_script( 'eOSbr-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'eOSbr-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-
-	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-1.10.2.min.js');
+    
+    wp_enqueue_script('jQuery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -137,3 +137,10 @@ function new_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+
+function time_ago( $type = 'post' ) {
+  $d = 'comment' == $type ? 'get_comment_time' : 'get_post_time';
+ 
+  return human_time_diff($d('U'), current_time('timestamp')) . " " . __('atrás');
+ 
+}

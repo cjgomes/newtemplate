@@ -69,7 +69,5 @@
 
               });
             </script>
-
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-
